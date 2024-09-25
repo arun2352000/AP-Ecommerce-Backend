@@ -65,32 +65,32 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    reviews: [
-        {
-            user:{
-                // type:mongoose.Schema.Types.ObjectId,
-                // ref: 'User'
-                type : String,
-                required:true
-            },
-            rating: {
-                type: String,
-                required: true
-            },
-            comment: {
-                type: String,
-                required: true
-            }
-        }
-    ],
-    user: {
-        type : mongoose.Schema.Types.ObjectId
-    }
-    ,
-    createdAt:{
-        type: Date,
-        default: Date.now()
-    }
+    // reviews: [
+    //     {
+    //         user:{
+    //             // type:mongoose.Schema.Types.ObjectId,
+    //             // ref: 'User'
+    //             type : String,
+    //             required:true
+    //         },
+    //         rating: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         comment: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     }
+    // ],
+    // user: {
+    //     type : mongoose.Schema.Types.ObjectId
+    // }
+    // ,
+    // createdAt:{
+    //     type: Date,
+    //     default: Date.now()
+    // }
 },
 { timestamps:true }
 );
