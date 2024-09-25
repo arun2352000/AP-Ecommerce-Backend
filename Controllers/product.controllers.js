@@ -13,3 +13,14 @@ export const createProduct = async(req,res) => {
             }
 
 }
+
+export const getAllProduct = async(req,res)=>{
+    try {
+        const products = await PRODUCT.find()
+        res.status(200).json({data: products});
+    }
+    catch(error){
+        console.log(error);
+        
+    }
+}
