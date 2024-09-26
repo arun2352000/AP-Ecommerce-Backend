@@ -36,6 +36,7 @@ let upload = multer({
 
 let uploadHandler = upload.single('file');
 
+// app.post ()
 //end of multer
 
 connectDB();
