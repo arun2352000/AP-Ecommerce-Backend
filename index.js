@@ -17,24 +17,24 @@ app.use(express.json());
 
 // multer start
 
-let storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images')
-    },
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() *1)
-        cb(null, file.originalname + '-' + uniqueSuffix + path.extname(file.originalname)  )
-    }
-})
-let maxSize = 2 * 1024 * 1024;
-let upload = multer({
-    storage: storage,
-    limits: {
-        fileSize: maxSize
-    }
-})
+// let storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, './public/images')
+//     },
+//     filename: (req, file, cb) => {
+//         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() *1)
+//         cb(null, file.originalname + '-' + uniqueSuffix + path.extname(file.originalname)  )
+//     }
+// })
+// let maxSize = 2 * 1024 * 1024;
+// let upload = multer({
+//     storage: storage,
+//     limits: {
+//         fileSize: maxSize
+//     }
+// })
 
-let uploadHandler = upload.single('file');
+// let uploadHandler = upload.single('file');
 
 // app.post ()
 //end of multer
