@@ -6,9 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
     "start": "node index.js",
-    "seeder": "node ./utils/seeder.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
