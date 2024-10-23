@@ -1,4 +1,4 @@
-import PRODUCT from "../Models/product.Schema.js";
+import PRODUCT from "../Models/product.schema.js";
 
 //put product list 
 
