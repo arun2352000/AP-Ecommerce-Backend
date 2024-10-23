@@ -10,12 +10,9 @@ const connectDB =async()=>{
         const connection = await mongoose.connect(mongoURL)
         console.log(`MongoDB Connected: ${connection.connection.host}`)
         return connection
-            
-           
-            } catch (error) {
-                console.error(error)
-                
-                }
+    } catch (error) {
+        console.log(error.message)        
+    }
 }
 
 export default connectDB

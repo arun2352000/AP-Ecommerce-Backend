@@ -2,7 +2,7 @@ import express from "express"
 import cors from 'cors'
 import dotenvv from 'dotenv'
 import connectDB from "./Database/dbConfig.js";
-import productRouter from "./Router/product.router.js";
+import productRouter from "./Router/product.Router.js";
 
 
 dotenvv.config();
@@ -10,7 +10,7 @@ dotenvv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors)
+app.use(cors())
 app.use(express.json());
 
 connectDB()
