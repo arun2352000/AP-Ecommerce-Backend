@@ -1,8 +1,8 @@
 import express from "express"
 import cors from 'cors'
 import dotenvv from 'dotenv'
-import connectDB from "./Database/dbConfig.js";
-import productRouter from "./Router/product.Router.js";
+import connectDB from './Database/dbConfig.js';
+import productRouter from './Router/product.Router.js';
 
 
 dotenvv.config();
@@ -17,6 +17,6 @@ connectDB()
 
 app.use('/app/product',productRouter)
 
-app.listen(
-    port,()=> console.log(`Server is running on port ${port}`)
-)
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
+    })
