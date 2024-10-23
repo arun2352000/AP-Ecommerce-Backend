@@ -2,7 +2,7 @@ import express from "express"
 import cors from 'cors'
 import dotenvv from 'dotenv'
 import connectDB from './Database/dbConfig.js';
-import productRouter from './Router/product.Router.js';
+import productRouter from './Router/product.router.js';
 
 
 dotenvv.config();

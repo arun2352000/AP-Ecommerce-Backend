@@ -19,7 +19,7 @@ export const createProduct = async(req,res) => {
 // get all products from api
 
 export const getAllProduct = async(req,res)=>{
-    console.log('Request received');
+    // console.log('Request received');
     try {
         const products = await PRODUCT.find()
         res.status(200).json({message:"product fetched successfully",data: products});
