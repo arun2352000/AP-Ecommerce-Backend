@@ -64,7 +64,7 @@ const productSchema = new mongoose.Schema({
     numOfReviews: {
         type: Number,
         default: 0
-    }
+    },
     // reviews: [
     //     {
     //         user:{
@@ -83,16 +83,16 @@ const productSchema = new mongoose.Schema({
     //         }
     //     }
     // ],
-    // user: {
-    //     type : mongoose.Schema.Types.ObjectId
-    // }
-    // ,
-    // createdAt:{
-    //     type: Date,
-    //     default: Date.now()
-    // }
+    user: {
+        type : mongoose.Schema.Types.ObjectId
+    }
+    ,
+    createdAt:{
+        type: Date,
+        default: Date.now()
+    }
 },
-{ timestamps:true }
+// { timestamps:true }
 );
 
 const PRODUCT = mongoose.model('PRODUCT',productSchema)

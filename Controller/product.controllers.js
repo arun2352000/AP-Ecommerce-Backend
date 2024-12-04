@@ -1,11 +1,15 @@
 import PRODUCT from "../Models/product.schema.js";
 
+import APIFeatures from "../utils/apiFeatures.js";
+
+// const APIFeatures = require ("../utils/apiFeatures.js");
+
 //put product list 
 
 export const createProduct = async(req,res) => {
     try {
         const {name,price,description,category,seller,stock,images,ratings} = req.body;
-        const newProduct = new PRODUCT({name,price,description,category,seller,stock,images,ratings})
+        const newProduct = new PRODUCT({name,price,description,category,seller,stock,images,ratings, user: req.user._id})
         await newProduct.save()
         res.status(200).json({data: newProduct});
         } catch (error) {
@@ -20,8 +24,11 @@ export const createProduct = async(req,res) => {
 
 export const getAllProduct = async(req,res)=>{
     // console.log('Request received');
+    const resPerPage = 3;
+
+    const apiFeatures = new APIFeatures(PRODUCT.find(),req.query).search().filter().paginate(resPerPage)
     try {
-        const products = await PRODUCT.find()
+        const products = await apiFeatures.query;
         res.status(200).json({message:"product fetched successfully",data: products});
     }
     catch(error){
